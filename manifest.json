@@ -15,13 +15,28 @@
             "32": "images/icon-32.png",
             "48": "images/icon-48.png",
             "128": "images/icon-128.png"
-        }
+        },
+        "default_popup": "index.html"
     },
+    "content_scripts": [
+        {
+            "js": [
+                "content.js"
+            ],
+            "matches": [
+                "https://www.youtube.com/shorts/*"
+            ]
+        }
+    ],
     "background": {
         "service_worker": "background.js"
     },
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
     "permissions": [
-        "activeTab",
-        "scripting"
+        "scripting",
+        "alarms"
     ]
 }
